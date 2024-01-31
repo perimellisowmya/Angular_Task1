@@ -1,0 +1,30 @@
+<div class="container mt-5">
+  <table class="custom-table">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Firstname</th>
+        <th>Lastname</th>
+        <th>Email</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody *ngIf="data && data.length > 0">
+      <tr *ngFor="let user of data" class="bg-white">
+        <td>{{ user.id }}</td>
+        <td>{{ user.firstName }}</td>
+        <td>{{ user.lastName }}</td>
+        <td>{{ user.email }}</td>
+        <td>
+          <button class="custom-button">Edit</button>
+          <button style="margin-left:5px" class="custom-button">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+    <tbody *ngIf="!data || data.length === 0">
+      <tr>
+        <td colspan="4" class="text-center">No data available</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
